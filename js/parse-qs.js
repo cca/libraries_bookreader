@@ -10,4 +10,3 @@ function parseQuery(str) {
 }
 
 window.vaultItem = parseQuery(location.search)
-console.log(vaultItem)
