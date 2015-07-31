@@ -17,7 +17,7 @@ Our Customizations live primarily in the js/app.js file, which is based off of b
 
 VAULT interacts with the bookreader by constructing special links filled with item metadata that tell the bookreader how to render a particular item's attachments as a book. Here's an example:
 
-    {{book.reader.domain}}/?_title_=**Awesome%20Book**&_id_=**d79ea3fb-6d87-4003-9b40-9b322dcd87fc**&_version_=**1**&_filenames_=**page**&_pages_=**9**
+{{book.reader.domain}}/?_title_=**Awesome%20Book**&_id_=**d79ea3fb-6d87-4003-9b40-9b322dcd87fc**&_version_=**1**&_filenames_=**page**&_pages_=**9**
 
 I've made the _keys_ italics in the query string and their **values** bold to highlight what information is passed. Here are the meanings of these fields and how the bookreader uses them:
 
