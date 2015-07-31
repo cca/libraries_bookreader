@@ -6,3 +6,18 @@
 #BRtoolbar .embed, .print {
     display: none;
 }
+
+div#BRnav,
+#BRtoolbar,
+.BRnavCntl {
+    background-color: #fff;
+}
+
+/* CCA branded logo */
+a.logo {
+    background: url(../cca-images/logo.png) no-repeat transparent;
+        -webkit-background-size: cover;
+    background-size: cover;
+    margin: 0 10px;
+    width: 100px;
+}
