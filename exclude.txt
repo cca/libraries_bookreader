@@ -1,0 +1,9 @@
+.sass-cache
+.uglify-name-cache
+.git
+.git*
+node_modules
+package.json
+Gruntfile.js
+*.txt
+*.md
