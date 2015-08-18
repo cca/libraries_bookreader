@@ -85,8 +85,56 @@ br.getEmbedCode = function(frameWidth, frameHeight, viewParams) {
 
 br.logoURL = 'https://vault.cca.edu';
 
-br.initUIStrings = function()
-{
+//Share modal
+br.buildShareDiv = function(jShareDiv) {
+    var pageView = document.location + '';
+    var bookView = (pageView + '').replace(/#.*/,'');
+    var self = this;
+
+    var jForm = $([
+        '<p>Copy and paste one of these options to share this book elsewhere.</p>',
+        '<form method="post" action="">',
+            '<fieldset>',
+                '<label for="pageview">Link to this page view:</label>',
+                '<input type="text" name="pageview" id="pageview" value="' + pageView + '"/>',
+            '</fieldset>',
+            '<fieldset>',
+                '<label for="booklink">Link to the book:</label>',
+                '<input type="text" name="booklink" id="booklink" value="' + bookView + '"/>',
+            '</fieldset>',
+
+            '<fieldset class="center">',
+                '<button type="button" onclick="$.fn.colorbox.close();">Finished</button>',
+            '</fieldset>',
+        '</form>'].join('\n'));
+
+    jForm.appendTo(jShareDiv);
+
+    jForm.find('input').bind('change', function() {
+        var form = $(this).parents('form:first');
+        var params = {};
+        params.mode = $(form.find('input[name=pages]:checked')).val();
+        if (form.find('input[name=thispage]').attr('checked')) {
+            params.page = self.getPageNum(self.currentIndex());
+        }
+
+        // $$$ changeable width/height to be added to share UI
+        var frameWidth = "480px";
+        var frameHeight = "430px";
+        form.find('.BRframeEmbed').val(self.getEmbedCode(frameWidth, frameHeight, params));
+    })
+    jForm.find('input[name=thispage]').trigger('change');
+    jForm.find('input, textarea').bind('focus', function() {
+        this.select();
+    });
+
+    jForm.appendTo(jShareDiv);
+    jForm = ''; // closure
+
+}
+
+//Tooltips
+br.initUIStrings = function(){
     // Navigation handlers will be bound after all UI is in place -- makes moving icons between
     // the toolbar and nav bar easier
 
