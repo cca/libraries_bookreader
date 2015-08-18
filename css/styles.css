@@ -16,8 +16,43 @@ div#BRnav,
 /* CCA branded logo */
 a.logo {
     background: url(../cca-images/logo.png) no-repeat transparent;
-        -webkit-background-size: cover;
+    -webkit-background-size: cover;
     background-size: cover;
     margin: 0 10px;
     width: 100px;
+}
+
+.BRfloatHead{
+	background-color: #4e5b63;
+}
+
+#cboxContent{
+	border: 10px solid #4e5b63;
+}
+
+#BRcontainer {
+	background-color:#eee;
+}
+
+#BRpageview {
+    background-color:#eee;
+}
+
+#BRreturn a, .BRfloatFoot a {
+	color: #4e5b63;
+}
+
+#BRreturn a:hover, .BRfloatFoot a:hover{
+	color: #ef4036;
+	transition: color 0.3s ease-in-out;
+}
+
+.BRicon {
+	background-color:transparent;
+    background-image: url(../cca-images/BRicons.png);
+	background-repeat:no-repeat;
+}
+
+.BRfloat a.floatShut {
+	background-image:url("../cca-images/icon_close-pop.png");
 }
