@@ -1,17 +1,6 @@
 // Create the BookReader object
 br = new BookReader();
 
-// @TODO make this dynamic; accept parameter in URL that sets these values
-// Return the width of a given page.  Here we assume all images are 800 pixels wide
-br.getPageWidth = function(index) {
-    return 800;
-}
-
-// Return the height of a given page.  Here we assume all images are 1200 pixels high
-br.getPageHeight = function(index) {
-    return 1200;
-}
-
 // Total number of leafs
 br.numLeafs = vaultItem.pages;
 // Book title & URL used for the book title link
@@ -76,7 +65,7 @@ br.getPageNum = function(index) {
 }
 
 // Override the path used to find UI images
-// NOTE: not needed, our implementation uses the default
+// @NOTE not needed, our implementation uses the default
 // br.imagesBaseURL = '/images/';
 
 br.getEmbedCode = function(frameWidth, frameHeight, viewParams) {
@@ -179,10 +168,37 @@ br.initUIStrings = function(){
     }
 }
 
-// Let's go!
-br.init();
 
-// read-aloud and search need backend compenents and are not supported in the demo
-$('#BRtoolbar').find('.read').hide();
-$('#textSrch').hide();
-$('#btnSrch').hide();
+// Override page dimension defaults using first page as model
+// page we choose here is arbitrary, we assume all have same aspect ratio
+// must put below getPageURI if we want to use that method
+var pageOne = br.getPageURI(1);
+var img = new Image();
+// when image loads, redefine getPage dimension methods
+img.onload = function(event) {
+    // see HTMLImageElement object: http://www.w3.org/TR/html5/embedded-content-0.html#htmlimageelement
+    // these two props *should* be equal for an image not yet insert into DOM
+    // but just in case we prefer natural* props
+    var w = this.naturalWidth || this.width;
+    var h = this.naturalHeight || this.height;
+
+    // define page dimension methods
+    // @NOTE might be able to make this work for a book with variable dimensions
+    // by using img.src = br.getPageURI(index) inside each method
+    // but has tricky async nature since we learn dimensions only inside onload callback
+    br.getPageWidth = function(index) {
+        return w;
+    }
+    br.getPageHeight = function(index) {
+        return h;
+    }
+
+    // we only initialize the Bookreader once we know the dimensions
+    br.init();
+
+    // read-aloud and search need backend components we don't have
+    $('#BRtoolbar').find('.read').hide();
+    $('#textSrch').hide();
+    $('#btnSrch').hide();
+}
+img.src = pageOne; // this triggers the onload handler above
