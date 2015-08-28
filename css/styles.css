@@ -1,7 +1,9 @@
 /*
  * Custom overrides for BookReader Demo.
  */
-
+body{
+	background-color:#f5f5f5;
+}
 /* Hide print and embed functionality */
 #BRtoolbar .embed, .print {
     display: none;
@@ -31,11 +33,11 @@ a.logo {
 }
 
 #BRcontainer {
-	background-color:#eee;
+	background-color:#f5f5f5;
 }
 
 #BRpageview {
-    background-color:#eee;
+    background-color:#f5f5f5;
 }
 
 #BRreturn a, .BRfloatFoot a {
@@ -55,4 +57,39 @@ a.logo {
 
 .BRfloat a.floatShut {
 	background-image:url("../cca-images/icon_close-pop.png");
+}
+
+.BRemptypage {
+	background-image:url("../cca-images/paper.png");
+}
+
+/* 
+	Opener section in case there are no parameters in the URL
+*/
+#opener{
+	margin: 5em auto;
+	width: 90%;
+	height: 50em;
+	border:1px solid rgba(125,125,125,.5);
+	background-color:white;
+    font-family: "Lucida Grande","Arial",sans-serif;
+}
+
+#opener img{
+	display:block;
+	margin:3em auto;
+}
+
+#opener p{
+	margin:0 auto;
+	width:500px;
+	font-size:1.2em;
+	line-height:1.7em;
+}
+
+#opener h1{
+	width:500px;
+	font-size:1.55em;
+	margin: .5em auto;
+	text-transform: uppercase;
 }
