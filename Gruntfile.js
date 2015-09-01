@@ -70,18 +70,6 @@ module.exports = function (grunt) {
                     ]
                 }]
             },
-            // for `grunt watch` task, probably only JS/CSS/HTML change regularly
-            quick: {
-                files: [{
-                    expand: true,
-                    dot: true,
-                    cwd: '.',
-                    dest: 'dist',
-                    src: [
-                        'index.html'
-                    ]
-                }]
-            }
         },
         useminPrepare: {
             html: 'index.html',
@@ -94,8 +82,8 @@ module.exports = function (grunt) {
         },
         watch: {
           dist: {
-            files: ['css/*.scss', 'js/*.js'],
-            tasks: ['build-quick']
+            files: ['css/*.scss', 'js/*.js', 'index.html'],
+            tasks: ['build']
           }
         },
         open: {
@@ -116,16 +104,6 @@ module.exports = function (grunt) {
         'concat:generated',
         'uglify:generated',
         'copy',
-        'usemin'
-    ]);
-
-    grunt.registerTask('build-quick', [
-        'useminPrepare',
-        'clean',
-        'sass',
-        'concat:generated',
-        'uglify:generated',
-        'copy:quick',
         'usemin'
     ]);
 
