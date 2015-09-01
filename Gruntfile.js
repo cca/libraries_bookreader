@@ -58,8 +58,12 @@ module.exports = function (grunt) {
                     dest: 'dist',
                     src: [
                         'images/*.{webp,gif,png,jpg,jpeg}',
+                        'cca-images/*.{webp,gif,png,jpg,jpeg}',
                         'index.html',
-                        '.htaccess'
+                        '.htaccess',
+                        'vendor/*',
+                        'bookreader/Bookreader/Bookreader.css',
+                        'bookreader/Bookreader/Bookreader.js',
                     ]
                 }]
             }
@@ -72,7 +76,7 @@ module.exports = function (grunt) {
       },
       open: {
           dist: {
-              path: 'http://localhost:8000/?title=Double%20Readings&id=d79ea3fb-6d87-4003-9b40-9b322dcd87fc&version=1&filenames=page&pages=9'
+              path: 'http://localhost:8000/?title=Double%20readings%20%2F%20Buzz%20Spector.&id=19f47e30-7c3a-466b-a109-6b20a411c671&version=1&filenames=page&pages=16#page/1/mode/2up'
           }
       }
     });
