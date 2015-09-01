@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "demo": "python -c 'import SimpleHTTPServer; SimpleHTTPServer.test();' & sleep 2; open 'http://localhost:8000/?title=Five%20by%20seven%20for%20Yvon%20Lambert%20%3A%20nine%20works%20%2F%20by%20Richard%20Tuttle.&id=553c0faf-f895-4277-8d45-126922d74e4d&version=1&filenames=page&pages=7'",
-    "deploy": "rsync -avz --exclude-from exclude.txt . libraries.cca.edu:~/libraries.cca.edu/bookreader",
+    "deploy": "rsync --archive --compress --verbose --delete --exclude-from exclude.txt dist/ libraries.cca.edu:~/libraries.cca.edu/bookreader",
     "test": "grunt test"
   },
   "repository": {
