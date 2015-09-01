@@ -5,6 +5,19 @@ module.exports = function (grunt) {
     require('load-grunt-tasks')(grunt);
 
     grunt.initConfig({
+        connect: {
+            dist: {
+                options: {
+                    base: 'dist',
+                    keepalive: true,
+                    open: {
+                        // @TODO doesn't actually open in the browser, annoying
+                        target: 'http://localhost:8000/?title=Double%20readings%20%2F%20Buzz%20Spector.&id=19f47e30-7c3a-466b-a109-6b20a411c671&version=1&filenames=page&pages=16#page/1/mode/2up',
+                        appName: 'open'
+                    }
+                }
+            }
+        },
         clean: {
             dist: {
                 files: [{
@@ -90,5 +103,9 @@ module.exports = function (grunt) {
 
     grunt.registerTask('default', [
         'build'
+    ]);
+
+    grunt.registerTask('server', [
+        'connect'
     ]);
 };
