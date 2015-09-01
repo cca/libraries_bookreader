@@ -41,15 +41,6 @@ module.exports = function (grunt) {
           }
         },
         uglify: {
-            dist: {
-                files: {
-                    'dist/js/app.js': [
-                        'vendor/jquery.query-object.js',
-                        'js/parse-qs.js',
-                        'js/app.js'
-                    ]
-                }
-            },
             options: {
                 compress: {
                     drop_console: true,
@@ -78,26 +69,60 @@ module.exports = function (grunt) {
                         'bookreader/**/**'
                     ]
                 }]
+            },
+            // for `grunt watch` task, probably only JS/CSS/HTML change regularly
+            quick: {
+                files: [{
+                    expand: true,
+                    dot: true,
+                    cwd: '.',
+                    dest: 'dist',
+                    src: [
+                        'index.html'
+                    ]
+                }]
             }
+        },
+        useminPrepare: {
+            html: 'index.html',
+            options: {
+                dest: 'dist'
+            }
+        },
+        usemin: {
+            html: 'dist/index.html'
         },
         watch: {
           dist: {
             files: ['css/*.scss', 'js/*.js'],
-            tasks: ['build']
+            tasks: ['build-quick']
           }
-      },
-      open: {
-          dist: {
-              path: 'http://localhost:8000/?title=Double%20readings%20%2F%20Buzz%20Spector.&id=19f47e30-7c3a-466b-a109-6b20a411c671&version=1&filenames=page&pages=16#page/1/mode/2up'
-          }
-      }
-    });
+        },
+        open: {
+            dist: {
+                path: 'http://localhost:8000/?title=Double%20readings%20%2F%20Buzz%20Spector.&id=19f47e30-7c3a-466b-a109-6b20a411c671&version=1&filenames=page&pages=16#page/1/mode/2up'
+                }
+            }
+        });
 
     grunt.registerTask('build', [
+        'useminPrepare',
         'clean',
         'sass',
-        'uglify',
-        'copy'
+        'concat:generated',
+        'uglify:generated',
+        'copy',
+        'usemin'
+    ]);
+
+    grunt.registerTask('build-quick', [
+        'useminPrepare',
+        'clean',
+        'sass',
+        'concat:generated',
+        'uglify:generated',
+        'copy:quick',
+        'usemin'
     ]);
 
     grunt.registerTask('default', [

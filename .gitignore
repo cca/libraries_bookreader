@@ -1,2 +1,3 @@
 dist/
 .uglify-name-cache
+.tmp/
