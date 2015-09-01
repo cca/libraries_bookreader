@@ -75,8 +75,7 @@ module.exports = function (grunt) {
                         'index.html',
                         '.htaccess',
                         'vendor/*',
-                        'bookreader/Bookreader/Bookreader.css',
-                        'bookreader/Bookreader/Bookreader.js',
+                        'bookreader/**/**'
                     ]
                 }]
             }
