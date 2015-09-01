@@ -4,17 +4,14 @@
     <title>CCA Libraries Bookreader</title>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 
+    <!-- @TODO these should be concatenated & minifed in the `grunt build` task-->
     <link rel="stylesheet" type="text/css" href="bookreader/BookReader/BookReader.css" id="BRCSS">
     <!-- Custom CSS overrides -->
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js"></script>
-    <script src="vendor/dragscrollable.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.6.3/jquery.colorbox-min.js"></script>
-    <script src="vendor/jquery.ui.ipad.js"></script>
-    <script src="vendor/jquery.bt.min.js "></script>
-    <script src="bookreader/BookReader/BookReader.js"></script>
 </head>
 <body>
 
@@ -22,15 +19,20 @@
     <noscript>
         Sorry! This Bookreader application requires JavaScript to function.
     </noscript>
-</div>
-<div id="opener">
-<div id="openerLogo"><img src="cca-images/ccatheme_logo.gif"><div>
-<h1>Book Reader</h1>
-<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.</p>
-</div>
+    <div id="opener">
+        <div id="openerLogo"><img src="cca-images/ccatheme_logo.gif"></div>
+        <div>
+            <h1>Book Reader</h1>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.</p>
+        </div>
+    </div>
 </div>
 
 <!-- build:js js/app.min.js -->
+<script src="vendor/dragscrollable.js"></script>
+<script src="vendor/jquery.ui.ipad.js"></script>
+<script src="vendor/jquery.bt.min.js "></script>
+<script src="bookreader/BookReader/BookReader.js"></script>
 <script src="vendor/jquery.query-object.js"></script>
 <script src="js/parse-qs.js"></script>
 <script src="js/app.js"></script>

@@ -65,7 +65,6 @@ module.exports = function (grunt) {
                         'cca-images/*.{webp,gif,png,jpg,jpeg}',
                         'index.html',
                         '.htaccess',
-                        'vendor/*',
                         'bookreader/**/**'
                     ]
                 }]
