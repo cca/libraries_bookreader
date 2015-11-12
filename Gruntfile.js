@@ -102,6 +102,7 @@ module.exports = function (grunt) {
         'sass',
         'concat:generated',
         'uglify:generated',
+        'cssmin:generated',
         'copy',
         'usemin'
     ]);
