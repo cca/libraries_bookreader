@@ -81,6 +81,8 @@ br.buildShareDiv = function(jShareDiv) {
     var self = this;
 
     var jForm = $([
+        // @TODO could make these nicer, e.g. with Twitter/Facebook share links
+        // low priority though because most items will be private to CCA
         '<p>Copy and paste one of these options to share this book elsewhere.</p>',
         '<form method="post" action="">',
             '<fieldset>',
