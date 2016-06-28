@@ -6,14 +6,11 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         clean: {
-            dist: {
-                files: [{
-                    dot: true,
-                    src: [
-                        'dist'
-                    ]
-                }]
-            }
+            options: {
+                dot: true,
+                force: true
+            },
+            dist: ['dist/*']
         },
         sass: {
           dist: {
