@@ -151,6 +151,8 @@ img.onload = function(event) {
 
     // we only initialize the Bookreader once we know the dimensions
     br.init();
+    // zoom slightly out — Paul's issue with text cut off at top of page
+    br.zoom(-1);
 
     // override one single entry in the initUIStrings tooltips method
     $('#BookReader').find('.logo').attr('title', 'Go to VAULT');
