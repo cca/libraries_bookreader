@@ -59,12 +59,7 @@ a.logo {
 	background-image: url("../cca-images/icon_close-pop.png");
 }
 
-.BRemptypage {
-	background-image: url("../cca-images/paper.png");
-}
-
 /*
-	
  section in case there are no parameters in the URL
 */
 #opener {
