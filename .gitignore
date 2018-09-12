@@ -1,3 +1,4 @@
 dist/
 .uglify-name-cache
 .tmp/
+css/styles.css
