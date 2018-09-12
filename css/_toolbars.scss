@@ -1,0 +1,45 @@
+div#BRnav,
+.BRtoolbar,
+.BRnavCntl {
+    background-color: #fff;
+}
+
+/* CCA branded logo */
+a.logo {
+    background: url(../cca-images/logo.png) no-repeat transparent;
+    -webkit-background-size: cover;
+    background-size: cover;
+	position: relative;
+    margin: 0 10px;
+	top: 3px;
+    width: 100px;
+}
+
+#BRreturn {
+	line-height: 48px;
+	padding: 0;
+}
+
+#BRreturn a {
+	color: #4e5b63;
+}
+
+#BRreturn a:hover {
+	color: #ef4036;
+	transition: color 0.3s ease-in-out;
+}
+
+.BRicon {
+	background-color: transparent;
+    background-image: url(../cca-images/BRicons.png);
+	background-repeat: no-repeat;
+}
+
+/* UI looks cleaner with no separator lines */
+.BRtoolbarSection {
+	background-color: #fff;
+	border-right: 0;
+}
+.BRtoolbarRight {
+	border-left: 0;
+}

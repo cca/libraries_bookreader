@@ -3,6 +3,7 @@ module.exports = function (grunt) {
     'use strict';
     // load all grunt tasks
     require('load-grunt-tasks')(grunt);
+    const sass = require('node-sass');
 
     grunt.initConfig({
         clean: {
@@ -15,12 +16,12 @@ module.exports = function (grunt) {
         sass: {
           dist: {
             options: {
+              implementation: sass,
               style: 'compressed',
               sourcemap: 'none'
             },
             files: {
-              // @TODO switch over to sass
-              'dist/css/styles.css': 'css/styles.css'
+              'css/styles.css': 'css/index.scss'
             }
           }
         },
@@ -48,7 +49,6 @@ module.exports = function (grunt) {
                         'images/*.{webp,gif,png,jpg,jpeg}',
                         'cca-images/*.{webp,gif,png,jpg,jpeg}',
                         'index.html',
-                        '.htaccess',
                         'bookreader/**/**'
                     ]
                 }]
@@ -65,7 +65,7 @@ module.exports = function (grunt) {
         },
         watch: {
           dist: {
-            files: ['css/*css', 'js/*.js', 'index.html'],
+            files: ['css/*.scss', 'js/*.js', 'index.html'],
             tasks: ['build']
           }
         },
@@ -83,8 +83,7 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'useminPrepare',
         'clean',
-        // not using SASS currently, leave it configured by save speed by not running
-        // 'sass',
+        'sass',
         'concat:generated',
         'uglify:generated',
         'cssmin:generated',
