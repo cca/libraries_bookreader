@@ -10,13 +10,14 @@ html {
 	width: 100%;
 }
 
-#BookReader {
+.BookReader {
+	background-color: #f5f5f5;
 	height: 100%;
 	width: 100%;
 }
 
 div#BRnav,
-#BRtoolbar,
+.BRtoolbar,
 .BRnavCntl {
     background-color: #fff;
 }
@@ -26,31 +27,26 @@ a.logo {
     background: url(../cca-images/logo.png) no-repeat transparent;
     -webkit-background-size: cover;
     background-size: cover;
+	position: relative;
     margin: 0 10px;
+	top: 3px;
     width: 100px;
 }
 
-.BRfloatHead {
-	background-color: #4e5b63;
-}
-
-#cboxContent {
-	border: 10px solid #4e5b63;
-}
-
-#BRcontainer {
+.BRemptypage {
 	background-color: #f5f5f5;
 }
 
-#BRpageview {
-    background-color: #f5f5f5;
+#BRreturn {
+	line-height: 48px;
+	padding: 0;
 }
 
-#BRreturn a, .BRfloatFoot a {
+#BRreturn a {
 	color: #4e5b63;
 }
 
-#BRreturn a:hover, .BRfloatFoot a:hover{
+#BRreturn a:hover {
 	color: #ef4036;
 	transition: color 0.3s ease-in-out;
 }
@@ -61,8 +57,21 @@ a.logo {
 	background-repeat: no-repeat;
 }
 
-.BRfloat a.floatShut {
-	background-image: url("../cca-images/icon_close-pop.png");
+/* UI looks cleaner with no separator lines */
+.BRtoolbarSection {
+	background-color: #fff;
+	border-right: 0;
+}
+.BRtoolbarRight {
+	border-left: 0;
+}
+
+/* info & sharing dialogs */
+.BRfloatHead {
+	display: none;
+}
+.fieldset-embed {
+	display: none;
 }
 
 /*
@@ -100,7 +109,7 @@ a.logo {
 @media all and (max-width:1100px) {
 	#openerLogo {
 		margin: 0 auto;
-		max-width:95%;
+		max-width: 95%;
 	}
 }
 
@@ -109,7 +118,7 @@ a.logo {
 		background: url("../cca-images/ccatheme_logo_small.gif")
 	}
 	#opener p, #opener h1 {
-		width:auto;
+		width: auto;
 		padding: 0 1.5em 0;
 		}
 }
