@@ -21,9 +21,21 @@ img.onload = function(event) {
 
         mobileNavTitle: vaultItem.title,
         // info dialog details
+        // split VAULT item title "Book / by Author" into its separate pieces
         metadata: [
-            { label: 'Title', value: vaultItem.title.split(' / ')[0] },
-            { label: 'Author', value: vaultItem.title.split(' / ')[1].replace(/\s*by\s+/i, '').replace(/\.$/, '') }
+            {
+                label: 'Title',
+                value: vaultItem.title.split(' / ')[0]
+            }, {
+                label: 'Author',
+                value: vaultItem.title
+                    .split(' / ')[1]
+                    .replace(/\s*by\s+/i, '')
+                    .replace(/\.$/, '')
+            }, {
+                label: "About the Artists\' Book Collection",
+                value: "The Artists' Books Collection was developed to support study and teaching of bookworks as an art form. The collection includes handmade books, published artists' books and special format exhibition catalogs, comics and zines. Titles are <a href='https://library.cca.edu/cgi-bin/koha/opac-search.pl?idx=su&q=artists+books+collection'>searchable in the library catalog</a>."
+            }
         ],
 
         thumbnail: vault_url.replace('/items/', '/thumbs/') + '?gallery=preview',
