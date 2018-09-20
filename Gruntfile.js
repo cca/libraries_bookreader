@@ -75,7 +75,7 @@ module.exports = function (grunt) {
             },
             live: {
                 path:
-                    'http://libraries.cca.edu/bookreader/?title=The%20getting%20into%20the%20spirits%20cocktail%20book%20%3A%20from%20the%201984%20Miss%20General%20Idea%20Pavillion%20%2F%20by%20General%20Idea.&id=f6e9534c-c1fd-4c89-8edf-f8afcf65f8d4&version=1&filenames=page&pages=34#page/1/mode/2up'
+                    'https://libraries.cca.edu/static/bookreader/?title=The%20getting%20into%20the%20spirits%20cocktail%20book%20%3A%20from%20the%201984%20Miss%20General%20Idea%20Pavillion%20%2F%20by%20General%20Idea.&id=f6e9534c-c1fd-4c89-8edf-f8afcf65f8d4&version=1&filenames=page&pages=34#page/1/mode/2up'
             }
         }
     });
