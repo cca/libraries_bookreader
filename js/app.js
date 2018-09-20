@@ -118,4 +118,4 @@ img.onload = function(event) {
     $('#BookReader').find('.logo').attr('title', 'Go to VAULT');
 }
  // load first page, triggers the image onload handler
-img.src = vaultItem.root + 'file/' + vaultItem.id + '/' + vaultItem.version + '/' + vaultItem.filenames + '1.JPG'
+if (vaultItem.id) img.src = vaultItem.root + 'file/' + vaultItem.id + '/' + vaultItem.version + '/' + vaultItem.filenames + '1.JPG'
