@@ -12,7 +12,7 @@ Some `grunt` tasks are available:
 - `grunt build` minifies JS, CSS, & copies production files in a "dist" directory
 - `grunt watch` watches the JS, CSS, & index.html files for changes & then builds
 
-Our Customizations live primarily in the js/app.js file, which is based off of bookreader/BookReaderDemo/BookReaderJSAdvanced.js, and css/styles.css.
+Our Customizations live primarily in the js/app.js file, which is based off of bookreader/BookReaderDemo/BookReaderJSAdvanced.js, and in the SCSS files in the "css" directory.
 
 ## VAULT & File URLs
 
