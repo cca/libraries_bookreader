@@ -8,25 +8,25 @@ div#BRnav,
 a.logo {
     background: url(../cca-images/logo.png) no-repeat transparent;
     -webkit-background-size: cover;
-    background-size: cover;
+    background-size: contain;
 	position: relative;
     margin: 0 10px;
-	top: 3px;
-    width: 100px;
+	top: 5px;
+    width: 300px;
 }
 
 #BRreturn {
 	line-height: 48px;
 	padding: 0;
+
+    a:hover {
+        color: $dark-blue;
+        transition: color 0.3s ease-in-out;
+    }
 }
 
 #BRreturn a {
 	color: #4e5b63;
-}
-
-#BRreturn a:hover {
-	color: #ef4036;
-	transition: color 0.3s ease-in-out;
 }
 
 .BRicon {
