@@ -6,16 +6,17 @@ Interactive bookreader used in [VAULT](https://vault.cca.edu) for displaying art
 
 If you have `npm` you can run `npm run demo` to open a sample artist book on a Python server running locally. You will need to be signed into VAULT as an account with permission to see the book in order for images to load.
 
-Some inchoate `grunt` tasks are available:
+Some `grunt` tasks are available:
 
 - `grunt open` opens the localhost demo URL
 - `grunt build` minifies JS, CSS, & copies production files in a "dist" directory
+- `grunt watch` watches the JS, CSS, & index.html files for changes & then builds
 
-Our Customizations live primarily in the js/app.js file, which is based off of bookreader/BookReaderDemo/BookReaderJSSimple.js, and css/styles.css.
+Our Customizations live primarily in the js/app.js file, which is based off of bookreader/BookReaderDemo/BookReaderJSAdvanced.js, and css/styles.css.
 
 ## VAULT & File URLs
 
-VAULT interacts with the bookreader by constructing special links filled with item metadata that tell the bookreader how to render a particular item's attachments as a book. Here's an example:
+VAULT interacts with the Bookreader by constructing special links filled with item metadata that tell the Bookreader how to render a particular item's attachments as a book. Here's an example:
 
 {{book.reader.domain}}/?_title_=**Awesome%20Book**&_id_=**d79ea3fb-6d87-4003-9b40-9b322dcd87fc**&_version_=**1**&_filenames_=**page**&_pages_=**9**
 
