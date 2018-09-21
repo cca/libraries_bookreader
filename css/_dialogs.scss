@@ -1,4 +1,27 @@
 /* info & sharing dialogs */
+.BRfloat a {
+	color: $link-blue;
+	text-decoration: none;
+
+	&:hover {
+		color: $purple;
+		text-decoration: underline;
+	}
+
+	&:visited {
+		color: $purple;
+	}
+}
+
+a.BRinfoMoreInfo,
+a.BRinfoMoreInfo:visited {
+	color: #fff;
+}
+
+.BRinfoMoreInfoW {
+	background-color: $purple;
+}
+
 .BRfloatHead {
 	display: none;
 }
@@ -9,4 +32,12 @@
 
 .fieldset-embed {
 	display: none;
+}
+
+#colorbox:focus {
+	outline: $purple auto 5px;
+}
+
+.BRfloat button[type=button].share-finished {
+	background-color: $purple;
 }

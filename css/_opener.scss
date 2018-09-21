@@ -8,6 +8,34 @@
 	height: 50em;
 	margin: 3em auto;
 	width: 90%;
+
+	p {
+		font-size: 1.2em;
+		line-height: 1.7em;
+		margin: 0 auto 1em;
+		max-width: 600px;
+	}
+
+	h1 {
+		font-size: 1.55em;
+		margin: .5em auto;
+		max-width: 600px;
+		text-transform: uppercase;
+	}
+
+	a {
+		color: $link-blue;
+		text-decoration: none;
+
+		&:hover {
+			color: $purple;
+			text-decoration: underline;
+		}
+
+		&:visited {
+			color: $purple;
+		}
+	}
 }
 
 #openerLogo {
@@ -17,20 +45,6 @@
 	height: 140px;
 	margin: 3em auto;
 	max-width: 800px;
-}
-
-#opener p {
-	font-size: 1.2em;
-	line-height: 1.7em;
-	margin: 0 auto 1em;
-	max-width: 600px;
-}
-
-#opener h1 {
-	font-size: 1.55em;
-	margin: .5em auto;
-	max-width: 600px;
-	text-transform: uppercase;
 }
 
 // medium-sized screens

@@ -19,20 +19,25 @@ a.logo {
 	line-height: 48px;
 	padding: 0;
 
-    a:hover {
-        color: $dark-blue;
-        transition: color 0.3s ease-in-out;
-    }
-}
+    a {
+    	color: #000;
 
-#BRreturn a {
-	color: #4e5b63;
+        &:hover {
+            color: $purple;
+            text-decoration: underline;
+            transition: color 0.3s ease-in-out;
+        }
+    }
 }
 
 .BRicon {
 	background-color: transparent;
     background-image: url(../cca-images/BRicons.png);
 	background-repeat: no-repeat;
+
+    &:focus {
+        outline: $purple auto 5px;
+    }
 }
 
 /* UI looks cleaner with no separator lines */
@@ -42,4 +47,12 @@ a.logo {
 }
 .BRtoolbarRight {
 	border-left: 0;
+}
+
+#BRpager .ui-slider-range {
+    background-color: lighten($purple, 50%);
+}
+
+#BRpager .ui-slider-handle {
+    background-color: $purple;
 }
