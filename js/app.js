@@ -99,13 +99,12 @@ img.onload = function(event) {
             return index + 1;
         },
 
-        // path used to find UI images
-        imagesBaseURL: 'images/',
-
         getEmbedCode: function(frameWidth, frameHeight, viewParams) {
             return "Embed code not supported.";
         },
 
+        // path used to find UI images
+        imagesBaseURL: 'images/',
         logoURL: 'https://libraries.cca.edu',
     } // end of options object
 
@@ -122,14 +121,34 @@ img.onload = function(event) {
             return location.protocol + "//" + location.hostname + location.pathname + location.search;
         }
     };
+
+    br.__proto__.setupTooltips = function() {
+        var opts = {
+          positions: ['top', 'bottom'],
+          shrinkToFit: true,
+          spikeGirth: 5,
+          spikeLength: 3,
+          // $purple
+          fill: '#721ea0',
+          cornerRadius: 0,
+          strokeWidth: 0,
+          cssStyles: {
+            color: 'white',
+            fontSize: '1.25em',
+            whiteSpace: 'nowrap'
+          }
+        }
+        $('.js-tooltip').bt(opts)
+    };
+
     br.init()
     // zoom slightly out — Paul's issue with text cut off at top of page
     br.zoom(-1)
 
     // this says "Go to Archive.org otherwise"
-    $('#BookReader').find('.logo').attr('title', 'CCA Libraries Home')
+    br.refs.$br.find('.logo').attr('title', 'CCA Libraries Home')
 
-    // ovewrite broken email share link (used wrong encodeURI function)
+    // ovewrite broken email share link (uses wrong encodeURI function)
     $('.email-share-button').off('click').on('click', function() {
       var body = br.bookTitle + "\n\n" + br._getSocialShareUrl();
       window.location.href = 'mailto:?subject=' + encodeURIComponent(br.bookTitle) + '&body=' + encodeURIComponent(body);
