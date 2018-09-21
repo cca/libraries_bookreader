@@ -106,16 +106,34 @@ img.onload = function(event) {
             return "Embed code not supported.";
         },
 
-        logoURL: 'https://vault.cca.edu',
+        logoURL: 'https://libraries.cca.edu',
     } // end of options object
 
     br = new BookReader(options)
-    br.init();
+    // overwrite this fn (cannot be done with {options})
+    // it needs to pass the query string as that's what uniquely identifies
+    // a particular book for the app
+    br.__proto__._getSocialShareUrl = function() {
+        // also fixes the .thispage-social selector which was always false
+        if ($('.thispage-social:visible').prop('checked')) {
+            // includes hash with page number
+            return String(location)
+        } else {
+            return location.protocol + "//" + location.hostname + location.pathname + location.search;
+        }
+    };
+    br.init()
     // zoom slightly out — Paul's issue with text cut off at top of page
-    br.zoom(-1);
+    br.zoom(-1)
 
-    // override an entry in the initUIStrings tooltips method
-    $('#BookReader').find('.logo').attr('title', 'Go to VAULT');
+    // this says "Go to Archive.org otherwise"
+    $('#BookReader').find('.logo').attr('title', 'CCA Libraries Home')
+
+    // ovewrite broken email share link (used wrong encodeURI function)
+    $('.email-share-button').off('click').on('click', function() {
+      var body = br.bookTitle + "\n\n" + br._getSocialShareUrl();
+      window.location.href = 'mailto:?subject=' + encodeURIComponent(br.bookTitle) + '&body=' + encodeURIComponent(body);
+    })
 }
  // load first page, triggers the image onload handler
 if (vaultItem.id) img.src = vaultItem.root + 'file/' + vaultItem.id + '/' + vaultItem.version + '/' + vaultItem.filenames + '1.JPG'
