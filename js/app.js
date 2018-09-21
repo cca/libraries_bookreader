@@ -99,6 +99,7 @@ img.onload = function(event) {
             return index + 1;
         },
 
+        // must define this function to get links in the share dialog
         getEmbedCode: function(frameWidth, frameHeight, viewParams) {
             return "Embed code not supported.";
         },
