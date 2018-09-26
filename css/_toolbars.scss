@@ -17,7 +17,9 @@ a.logo {
 
 #BRreturn {
 	line-height: 48px;
+    max-width: 785px;
 	padding: 0;
+    text-overflow: ellipsis;
 
     a {
     	color: #000;
@@ -43,7 +45,7 @@ a.logo {
 /* UI looks cleaner with no separator lines */
 .BRtoolbarSection {
 	background-color: #fff;
-	border-right: 0;
+    border-right: 0;
 }
 .BRtoolbarRight {
 	border-left: 0;
@@ -59,4 +61,15 @@ a.logo {
 
 #BRnavCntlBtm:hover {
     background-color: $purple;
+}
+
+// fix some purple background image from peaking out
+div#BRpage .BRicon.book_left,
+div#BRpage .BRicon.onepg,
+div#BRpage .BRicon.twopg {
+    border-right: 0;
+    margin-right: 0;
+}
+div#BRpage .BRicon.thumb {
+    border-left: 0;
 }
