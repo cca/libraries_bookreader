@@ -1,10 +1,24 @@
 // vaultItem is in global scope from parse-qs.js
 var vault_url = vaultItem.root + 'items/' + vaultItem.id + '/' + vaultItem.version + '/'
-var img = new Image()
 
+// split VAULT item title "Book / by Author" into its separate pieces
+// for use in the info dialog details
+metadata = [{ label: 'Title', value: vaultItem.title.split(' / ')[0] }]
+
+var author = vaultItem.title.split(' / ')[1] && vaultItem.title
+    .split(' / ')[1].replace(/\s*by\s+/i, '').replace(/\.$/, '')
+if (author) metadata.push({ label: 'Author', value: author})
+
+metadata.push({
+    label: "About the Artists\' Book Collection",
+    value: "The Artists' Books Collection was developed to support study and teaching of bookworks as an art form. The collection includes handmade books, published artists' books and special format exhibition catalogs, comics and zines. Titles are <a href='https://library.cca.edu/cgi-bin/koha/opac-search.pl?idx=su&q=artists+books+collection'>searchable in the library catalog</a>."
+})
+
+
+var img = new Image()
 // we put all of the Bookreader definition inside this img.onload function
-// so that we can use the dimensions of the first page to define dynamic
-// getPageHeight & getPageWidth methods
+// so that we can use the dimensions of the first page to dynamically define
+// the getPageHeight and getPageWidth methods
 img.onload = function(event) {
     // see HTMLImageElement object:
     // http://www.w3.org/TR/html5/embedded-content-0.html#htmlimageelement
@@ -20,23 +34,7 @@ img.onload = function(event) {
         enableMobileNav: true,
 
         mobileNavTitle: vaultItem.title,
-        // info dialog details
-        // split VAULT item title "Book / by Author" into its separate pieces
-        metadata: [
-            {
-                label: 'Title',
-                value: vaultItem.title.split(' / ')[0]
-            }, {
-                label: 'Author',
-                value: vaultItem.title
-                    .split(' / ')[1]
-                    .replace(/\s*by\s+/i, '')
-                    .replace(/\.$/, '')
-            }, {
-                label: "About the Artists\' Book Collection",
-                value: "The Artists' Books Collection was developed to support study and teaching of bookworks as an art form. The collection includes handmade books, published artists' books and special format exhibition catalogs, comics and zines. Titles are <a href='https://library.cca.edu/cgi-bin/koha/opac-search.pl?idx=su&q=artists+books+collection'>searchable in the library catalog</a>."
-            }
-        ],
+        metadata: metadata,
 
         thumbnail: vault_url.replace('/items/', '/thumbs/') + '?gallery=preview',
         bookUrlMoreInfo: vault_url,
@@ -146,7 +144,7 @@ img.onload = function(event) {
     // zoom slightly out — Paul's issue with text cut off at top of page
     br.zoom(-1)
 
-    // this says "Go to Archive.org otherwise"
+    // this says "Go to Archive.org" otherwise
     br.refs.$br.find('.logo').attr('title', 'CCA Libraries Home')
 
     // ovewrite broken email share link (uses wrong encodeURI function)
