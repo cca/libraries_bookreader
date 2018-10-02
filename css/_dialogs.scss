@@ -18,6 +18,11 @@ a.BRinfoMoreInfo:visited {
 	color: #fff;
 }
 
+a.BRinfoMoreInfo:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
 .BRinfoMoreInfoW {
 	background-color: $purple;
 }
