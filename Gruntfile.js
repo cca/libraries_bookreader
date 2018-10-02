@@ -68,15 +68,6 @@ module.exports = function (grunt) {
             files: ['css/*.scss', 'js/*.js', 'index.html'],
             tasks: ['build']
           }
-        },
-        open: {
-            dist: {
-                path: 'http://localhost:8000/?title=Double%20readings%20%2F%20Buzz%20Spector.&id=19f47e30-7c3a-466b-a109-6b20a411c671&version=1&filenames=page&pages=16#page/1/mode/2up'
-            },
-            live: {
-                path:
-                    'https://libraries.cca.edu/static/bookreader/?title=The%20getting%20into%20the%20spirits%20cocktail%20book%20%3A%20from%20the%201984%20Miss%20General%20Idea%20Pavillion%20%2F%20by%20General%20Idea.&id=f6e9534c-c1fd-4c89-8edf-f8afcf65f8d4&version=1&filenames=page&pages=34#page/1/mode/2up'
-            }
         }
     });
 
