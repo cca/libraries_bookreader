@@ -142,7 +142,7 @@ img.onload = function(event) {
 
     br.init()
     // zoom slightly out — Paul's issue with text cut off at top of page
-    br.zoom(-1)
+    if (!$.browser.mobile) br.zoom(-1)
 
     // this says "Go to Archive.org" otherwise
     br.refs.$br.find('.logo').attr('title', 'CCA Libraries Home')
