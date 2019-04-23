@@ -1,9 +1,8 @@
-// vaultItem is in global scope from parse-qs.js
-var vault_url = vaultItem.root + 'items/' + vaultItem.id + '/' + vaultItem.version + '/'
+/* globals vaultItem */
 
 // split VAULT item title "Book / by Author" into its separate pieces
 // for use in the info dialog details
-metadata = [{ label: 'Title', value: vaultItem.title.split(' / ')[0] }]
+var metadata = [{ label: 'Title', value: vaultItem.title.split(' / ')[0] }]
 
 var author = vaultItem.title.split(' / ')[1] && vaultItem.title
     .split(' / ')[1].replace(/\s*by\s+/i, '').replace(/\.$/, '')
@@ -36,19 +35,21 @@ img.onload = function(event) {
         mobileNavTitle: vaultItem.title,
         metadata: metadata,
 
-        thumbnail: vault_url.replace('/items/', '/thumbs/') + '?gallery=preview',
-        bookUrlMoreInfo: vault_url,
+        thumbnail: vaultItem.url.replace('/items/', '/thumbs/') + '/?gallery=preview',
 
         // Total number of leaves
         getNumLeafs: function () { return vaultItem.pages },
         // Book title & URL used for the book title link
         bookTitle: vaultItem.title,
-        bookUrl: vault_url,
+        bookUrl: vaultItem.url,
+        bookUrlMoreInfo: vaultItem.url,
+        bookUrlText: vaultItem.title,
+        bookUrlTitle: 'View this book in VAULT',
 
         // retrieve images from VAULT using their index
         getPageURI: function(index) {
-            var url = vaultItem.root + 'file/' + vaultItem.id + '/' + vaultItem.version + '/' + vaultItem.filenames + (index + 1) + '.JPG';
-            return url;
+            var url = [vaultItem.root, 'file', vaultItem.id, vaultItem.version, vaultItem.filenames + (index + 1) + '.JPG'].join('/')
+            return url
         },
         // the whole reason we're inside an img.onload handler
         getPageHeight: function() { return h },
@@ -104,7 +105,7 @@ img.onload = function(event) {
 
         // path used to find UI images
         imagesBaseURL: 'images/',
-        logoURL: 'https://libraries.cca.edu',
+        logoURL: 'https://libraries.cca.edu'
     } // end of options object
 
     br = new BookReader(options)
@@ -154,4 +155,4 @@ img.onload = function(event) {
     })
 }
  // load first page, triggers the image onload handler
-if (vaultItem.id) img.src = vaultItem.root + 'file/' + vaultItem.id + '/' + vaultItem.version + '/' + vaultItem.filenames + '1.JPG'
+if (vaultItem.id) img.src = [vaultItem.root, 'file', vaultItem.id, vaultItem.version, vaultItem.filenames + '1.JPG'].join('/')
