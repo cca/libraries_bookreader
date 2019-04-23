@@ -8,7 +8,6 @@ If you have `npm` you can run `npm run demo` to open a sample artist book on a P
 
 Some `grunt` tasks are available:
 
-- `grunt open` opens the localhost demo URL
 - `grunt build` minifies JS, CSS, & copies production files in a "dist" directory
 - `grunt watch` watches the JS, CSS, & index.html files for changes & then builds
 
