@@ -1,24 +1,33 @@
-div#BRnav,
+.BRnav,
 .BRtoolbar,
-.BRnavCntl {
+.BRnav .BRnavCntl {
     background-color: #fff;
 }
 
+.BRtoolbar {
+    padding: 0 10px;
+}
+
 /* CCA branded logo */
-a.logo {
+.BookReader a.logo {
     background: url(../cca-images/logo.png) no-repeat transparent;
     -webkit-background-size: cover;
     background-size: contain;
-	position: relative;
-    margin: 0 10px;
-	top: 5px;
-    width: 300px;
+    height: 36px;
+	margin: 0;
+    position: relative;
+	top: 10px;
+    width: 270px;
 }
 
-#BRreturn {
-	line-height: 48px;
+.BRtoolbarSectionLogo {
+    display: inline-block;
+}
+
+.BRtoolbarSectionTitle {
+    font-size: 18px;
+	line-height: $toolbar-lineheight;
     max-width: 785px;
-	padding: 0;
     text-overflow: ellipsis;
 
     a {
@@ -32,9 +41,17 @@ a.logo {
     }
 }
 
+.BRtoolbarSectionInfo {
+    line-height: $toolbar-lineheight;
+}
+
+.BRtoolbarbuttons .BRpill {
+    border-color: #000;
+    color: #000;
+}
+
 .BRicon {
 	background-color: transparent;
-    background-image: url(../cca-images/BRicons.png);
 	background-repeat: no-repeat;
 
     &:focus {
@@ -42,34 +59,32 @@ a.logo {
     }
 }
 
-/* UI looks cleaner with no separator lines */
-.BRtoolbarSection {
-	background-color: #fff;
-    border-right: 0;
-}
-.BRtoolbarRight {
-	border-left: 0;
+.BRnav .BRpager {
+    background-color: darken($light-bg-color, 15%);
+
+    .ui-slider-range {
+        background-color: lighten($purple, 50%);
+    }
+
+    .ui-slider-handle {
+        background-color: $purple;
+    }
 }
 
-#BRpager .ui-slider-range {
-    background-color: lighten($purple, 50%);
+// we have to repeat all these bc the mobile nav has a more-specific selector...
+.BRbodyMobileNavEnabled .BRnav .BRpager {
+    background-color: darken($light-bg-color, 15%);
+
+    .ui-slider-range {
+        background-color: lighten($purple, 50%);
+    }
+
+    .ui-slider-handle {
+        background-color: $purple;
+    }
 }
 
-#BRpager .ui-slider-handle {
+.BRbodyMobileNavEnabled .BRnav .BRnavCntlBtm:hover,
+.BRnav .BRnavCntlBtm:hover {
     background-color: $purple;
-}
-
-#BRnavCntlBtm:hover {
-    background-color: $purple;
-}
-
-// fix some purple background image from peaking out
-div#BRpage .BRicon.book_left,
-div#BRpage .BRicon.onepg,
-div#BRpage .BRicon.twopg {
-    border-right: 0;
-    margin-right: 0;
-}
-div#BRpage .BRicon.thumb {
-    border-left: 0;
 }
