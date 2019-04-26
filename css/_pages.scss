@@ -1,0 +1,13 @@
+// seemingly at random these have a line black border that looks bad
+.BRleafEdgeR,
+.BRleafEdgeL {
+    border: 0;
+}
+
+.BRemptypage {
+	background-color: $light-bg-color;
+}
+
+.BRbookcover {
+    box-shadow: none;
+}
