@@ -35,7 +35,10 @@ img.onload = function(event) {
         mobileNavTitle: vaultItem.title,
         metadata: metadata,
 
-        thumbnail: vaultItem.url.replace('/items/', '/thumbs/') + '/?gallery=preview',
+        // EQUELLA magic, 3 thumbnails for each attachment are stored in
+        // /file/{{UUID}}/{{VERSION}}/_THUMBS/ with derivative filenames
+        // in descending order of size: "_PREVIEW_.jpeg", "_135_.jpeg", ".jpeg"
+        thumbnail: vaultItem.url.replace('/items/', '/file/') + '/_THUMBS/' + vaultItem.filenames + '1.JPG_135_.jpeg',
 
         // Total number of leaves
         getNumLeafs: function () { return vaultItem.pages },
