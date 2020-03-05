@@ -1,3 +1,3 @@
 [submodule "bookreader"]
 	path = bookreader
-	url = https://github.com/openlibrary/bookreader.git
+	url = https://github.com/internetarchive/bookreader.git
