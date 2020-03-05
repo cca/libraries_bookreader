@@ -4,7 +4,7 @@
   "description": "CCA Libraries implementation of Open Library Bookreader",
   "main": "index.html",
   "scripts": {
-    "demo": "http-server & sleep 2 & open 'http://localhost:8080/?title=Five%20by%20seven%20for%20Yvon%20Lambert%20%3A%20nine%20works%20%2F%20by%20Richard%20Tuttle.&id=553c0faf-f895-4277-8d45-126922d74e4d&version=1&filenames=page&pages=7#page/1/mode/2up'",
+    "demo": "echo \"Demo Artist's Book visible at\nhttp://localhost:8080/?title=Five%20by%20seven%20for%20Yvon%20Lambert%20%3A%20nine%20works%20%2F%20by%20Richard%20Tuttle.&id=553c0faf-f895-4277-8d45-126922d74e4d&version=1&filenames=page&pages=7#page/1/mode/2up\" && http-server",
     "build": "grunt build",
     "watch": "grunt watch"
   },
