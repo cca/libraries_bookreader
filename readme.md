@@ -4,9 +4,9 @@ Interactive bookreader used in [VAULT](https://vault.cca.edu) for displaying art
 
 ## Development Notes
 
-If you have `npm` you can run `npm run demo` to open a sample artist book on a Python server running locally. You will need to be signed into VAULT as an account with permission to see the book in order for images to load.
+If you have `npm` you can run `npm run demo` to open a sample artist book on a local web server.
 
-Some `grunt` tasks are available:
+Two `grunt` tasks are available:
 
 - `grunt build` minifies JS, CSS, & copies production files in a "dist" directory
 - `grunt watch` watches the JS, CSS, & index.html files for changes & then builds

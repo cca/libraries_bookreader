@@ -1,6 +1,6 @@
 {
   "name": "libraries_bookreader",
-  "version": "4.2.0",
+  "version": "4.2.1",
   "description": "CCA Libraries implementation of Open Library Bookreader",
   "main": "index.html",
   "scripts": {
@@ -32,10 +32,10 @@
     "grunt-contrib-cssmin": "^3.0.0",
     "grunt-contrib-uglify": "^4.0.1",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-sass": "^3.0.2",
+    "grunt-sass": "^3.1.0",
     "grunt-usemin": "^3.1.1",
-    "http-server": "^0.11.1",
-    "load-grunt-tasks": "^4.0.0",
-    "node-sass": "^4.11.0"
+    "http-server": "^0.12.1",
+    "load-grunt-tasks": "^5.1.0",
+    "node-sass": "^4.13.1"
   }
 }
