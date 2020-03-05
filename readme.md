@@ -1,6 +1,6 @@
 # CCA Libraries Bookreader
 
-Interactive bookreader used in [VAULT](https://vault.cca.edu) for displaying artist's books. A customized version of [Open Library's Bookreader](https://github.com/openlibrary/bookreader).
+Interactive bookreader used in [VAULT](https://vault.cca.edu) for displaying artist's books. A customized version of [Internet Archive's Bookreader](https://github.com/internetarchive/bookreader). The version in package.json of this project is meant to track the version of IA's bookreader we're using.
 
 ## Development Notes
 

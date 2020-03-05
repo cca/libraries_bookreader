@@ -1,6 +1,6 @@
 {
   "name": "libraries_bookreader",
-  "version": "4.2.1",
+  "version": "4.5.1",
   "description": "CCA Libraries implementation of Open Library Bookreader",
   "main": "index.html",
   "scripts": {
