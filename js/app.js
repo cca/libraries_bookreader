@@ -10,7 +10,7 @@ if (author) metadata.push({ label: 'Author', value: author})
 
 metadata.push({
     label: "About the Artists\' Book Collection",
-    value: "The Artists' Books Collection was developed to support study and teaching of bookworks as an art form. The collection includes handmade books, published artists' books and special format exhibition catalogs, comics and zines. Titles are <a href='https://library.cca.edu/cgi-bin/koha/opac-search.pl?idx=su&q=artists+books+collection'>searchable in the library catalog</a>."
+    value: "The Artists' Books Collection was developed to support study and teaching of bookworks as an art form. The collection includes handmade books, published artists' books and special format exhibition catalogs, comics and zines. Titles are <a href='https://library.cca.edu/cgi-bin/koha/opac-search.pl?q=an:513033'>searchable in the library catalog</a>."
 })
 
 
