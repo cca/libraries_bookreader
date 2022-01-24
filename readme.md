@@ -32,5 +32,4 @@ Most of these pieces of information are used to determine what VAULT file URL co
 ## Links
 
 - [Internet Archive Bookreader documentation](https://openlibrary.org/dev/docs/bookreader)
-- [CCA Color Values](https://sites.google.com/a/cca.edu/libraries/home/design/color-values) (libraries only)
-- [CCA Libraries Logos](https://sites.google.com/a/cca.edu/libraries/home/design/logos) (libraries only)
+- [CCA Color Values](https://sites.google.com/cca.edu/librarieswiki/home/design/color-values) (libraries only)
