@@ -39,7 +39,7 @@
 }
 
 #openerLogo {
-	background: url("../cca-images/logo-large.png") no-repeat;
+	background: url(cca-images/logo-large.png) no-repeat;
 	background-size: contain;
 	display: block;
 	height: 140px;
@@ -58,7 +58,7 @@
 // small screens
 @media all and (max-width: 700px) {
 	#openerLogo {
-		background: url("../cca-images/logo.png") no-repeat;
+		background: url(cca-images/logo.png) no-repeat;
 		background-size: contain;
 		height: 80px;
 	}

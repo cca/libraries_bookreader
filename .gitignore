@@ -1,4 +1,5 @@
 dist/
 .uglify-name-cache
 .tmp/
-css/styles.css
+styles.css
+bookreader.zip

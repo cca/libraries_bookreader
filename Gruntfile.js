@@ -21,7 +21,7 @@ module.exports = function (grunt) {
               sourcemap: 'none'
             },
             files: {
-              'css/styles.css': 'css/index.scss'
+              'styles.css': 'css/index.scss'
             }
           }
         },
@@ -45,10 +45,10 @@ module.exports = function (grunt) {
                     cwd: '.',
                     dest: 'dist',
                     src: [
-                        'images/*.{webp,gif,png,jpg,jpeg}',
-                        'cca-images/*.{webp,gif,png,jpg,jpeg}',
-                        'index.html',
-                        'bookreader/**/**'
+                        'css/images/*',
+                        'cca-images/*',
+                        'images/*',
+                        'index.html'
                     ]
                 }]
             },
