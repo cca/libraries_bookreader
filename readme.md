@@ -13,6 +13,22 @@ Two `grunt` tasks are available:
 
 Our Customizations live primarily in the js/app.js file, which is based off of bookreader/BookReaderDemo/BookReaderJSAdvanced.js, and in the SCSS files in the "css" directory.
 
+## Publishing changes
+
+We host the app [on VAULT](https://vault.cca.edu/items/79e553bc-a84c-4610-b6d7-190a90dbb268/1/) to avoid problems with CORS (cross-origin resource restrictions, VAULT content being unable to be loaded on other domains). To publish code changes:
+
+- run the included `./publi.sh` script to build the app, zip it up, & open the VAULT item
+- login to VAULT if need be
+- **edit this version** under the Actions menu
+- **delete** the previous attachment zip
+- upload the new attachment zip
+- **edit** the attachment
+- click the **Unzip files** button
+- **save** in attachments dialog
+- **save** the item
+
+To test, you do the same with a different item and then edit that item's URL into the artists' books item template (under the Libraries eResources collection in the equella_templates project).
+
 ## VAULT & File URLs
 
 VAULT interacts with the Bookreader by constructing special links filled with item metadata that tell the Bookreader how to render a particular item's attachments as a book. Here's an example:
